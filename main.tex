@@ -2,20 +2,22 @@
 \documentclass[a4paper, extended]{adcv}
 % online
 \usepackage[british]{babel}
+\usepackage{geometry}
+\geometry{margin=0.75in}
 
 \usepackage{booktabs}
 \usepackage{graphicx}
 
-\newcommand*{\hib}{Bergen University College}
+% \newcommand*{\hib}{Bergen University College}
 \newcommand*{\uib}{University of Bergen}
-\newcommand*{\uniaq}{Universit{\`a} degli Studi dell'Aquila}
+% \newcommand*{\uniaq}{Universit{\`a} degli Studi dell'Aquila}
 
 \addbibresource{seva_pub.bib}
 
 \title{Vsevolod Suschevskiy's CV}
 
 \adcvname{Vsevolod}{Suschevskiy}
-\adcvtitle{BA in Sociology and Social Informatics}
+\adcvtitle{CV for Exchange with University of Bergen}
 \adcvaddress{St.Petersburg}{Russia}
 \adcvwebsite{https://nosoc.io/people/vsevolod.suschevskiy/}{nosoc.io/people/vsevolod.suschevskiy}
 \adcvemail{vvsuschevskiy}{gmail}{com}
@@ -28,7 +30,9 @@
 
 \selectlanguage{british}
 
-Having a combination of competitive computational thinking skills, including data analysis and modelling with moderate research skills I consider myself a good future student of an HCI MA program at the HSE University.
+% Having a combination of competitive computational thinking skills, including data analysis and modeling with experience in Computational Sociology research and teaching Data Science
+
+% One of my greatest accomplishments is my unsuccessful admission to the Northwestern University PhD in Technology and Social Behavior. I went to the second round, where only 12 out of 120 candidates remained, but did not get one of 4 places.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,25 +43,39 @@ Having a combination of competitive computational thinking skills, including dat
 \section{Education}
 
 \begin{adcvtabletwo}
-    \adcvrowtwo{\href{https://spb.hse.ru/en/ba/soc/}{\textbf{HSE University}}, {Sociology and Social Informatics}}{2017--2020}
+ \adcvrowtwo{\href{https://spb.hse.ru/en/ma/computer/}{\textbf{HSE University} (National Research University Higher School of Economics)}, {MA Information Systems and Human-Computer Interaction}}{2020--2022}
+
+    \adcvrowmulti{
+    At HSE, I mostly focused on research oriented courses and data science courses, and currently have a 8.0/10.0 GPA.}
+    %   \adcvrowmulti{
+    %   I dedicated my BSc thesis to studying how scientists with different disciplinary backgrounds collaborate, building co-authors' publication profiles based on connections venues they published in.
+    % %   In my thesis, I analyzed the organization of the scientific field of Agent-Based Modeling in the case of JASSS.
+    %   }
+
+    \adcvrowtwo{\href{https://spb.hse.ru/en/ba/soc/}{\textbf{HSE University} (National Research University Higher School of Economics)}, {BSc Sociology and Social Informatics, minor in Data Science}}{2017--2020}
+    
         \adcvrowmulti{
-      During three years in HSE I mostly focused on qualitative courses and in competitive environment scored 8.0 GPA (8.6 for the last 3 years). Also I have been granted with a scholarship that covers 50\% of tuition fees by scoring top 20\% GPA in a cohort. }
+      At HSE, I mostly focused on Analytical Sociology and Computational Social Science, courses in Information Systems, Social Network Analysis, Text Mining, and Agent-Based Modelling, scoring 7.99/10 GPA (8.6/10 for the last three years).
+      I was at the top of my cohort at the Data Science minor.}
        \adcvrowmulti{
-      In my thesis I analyzed the organization of scientific field of Agent-Based Modeling for the case of JASSS.}
-          \fi
+       I dedicated my BSc thesis to studying how scientists with different disciplinary backgrounds collaborate, building co-authors' publication profiles based on connections venues they published in.
+    %   In my thesis, I analyzed the organization of the scientific field of Agent-Based Modeling in the case of JASSS.
+      }
+        %   \fi
         \adcvrowskip
     \adcvrowtwo{\textbf{University of Bergen}, {Exchange term}}{Aug--Dec 2019}
         \adcvrowmulti{
-    I enrolled at multiple courses focusing on learning analytic, including mater level \href{https://www.uib.no/en/course/INFO352}{Research Topics in Technology Enhanced Learning}, where in a group of students was created a prototype of \href{https://marvelapp.com/prototype/7ei3e99/screen/62953154}{Cognitive Tutor for Python course}. This prototype with DBR-style documentation was graded as Excellent. Moreover, I took an extra-curriculum 10 ETCS course \href{https://www.uib.no/emne/INFO282}{Knowledge Representation and Reasoning}, where I learnt Prolog and theory behind Knowledge-based AI.}
- \adcvrowmulti{
-    My exchange was supported with \textit{Project: CPRU-2018/10035 - Kickstarting Capacity building in Technology Enhanced Learning (kCABTEL)}
-        }
+    I completed multiple courses in CS and Technology-Enhanced Learning (30 ECTS), including a master's level \href{https://www.uib.no/en/course/INFO352}{Research Topics in Technology Enhanced Learning} with a project on desig-based resaerch of \href{https://marvelapp.com/prototype/7ei3e99/screen/62953154}{Cognitive Tutor for Python course}, graded as Excellent. 
+    I also took an extra-curriculum 10 ETCS course \href{https://www.uib.no/emne/INFO282}{Knowledge Representation and Reasoning}, where I learned Prolog and theory behind Knowledge-based AI.}
+ %\adcvrowmulti{
+ %   My exchange was supported with a scholarship as a part of \textit{Project: %CPRU-2018/10035 - Kickstarting Capacity building in Technology Enhanced %Learning (kCABTEL)}
+ %       }
             \adcvrowskip
     \adcvrowtwo{\textbf{Immanuel Kant
 Baltic Federal
 University}, Sociology }{Sep--Dec 2016}
-        \adcvrowmulti{I enrolled on a state-funded budgetary place, but transferred after the first semester, as I was not satisfied with the quality of education.}
-  \fi
+        \adcvrowmulti{I enrolled on a state-funded place, but transferred after the first semester, as I wanted to specialize in Social Informatics and Computational Social Science.}
+%   \fi
 \end{adcvtabletwo}
 
 
@@ -69,34 +87,42 @@ University}, Sociology }{Sep--Dec 2016}
 
 
 
-\section{Projects}\label{sec:projects}
+\section{Research and Professional Experience}\label{sec:research}
 
 \begin{adcvtabletwo}
-\adcvrowtwo{\textbf{\href{https://slate.uib.no}{Centre for the Science of Learning \& Technology (SLATE)}}, Shiny Developer}{2020--Present}
-    \adcvrowmulti{Design course recommendation system for exchange students (\href{https://ceres.apps.slate.uib.no/sortsys/}{CERES})}
-    \adcvrowmulti{Write project documentation}
-    \adcvrowmulti{Set up shiny server on Linux}
-      \adcvrowskip
-      \adcvrowtwo{\textbf{\href{https://spb.hse.ru/en/ba/soc/}{Bachelor’s Programme 'Sociology and Social Informatics'}}, Teaching assistant}{2017--2020}
-%   \ifextended
-    \adcvrowmulti{\textit{Information Systems (2017-2018)}}
-    \adcvrowmulti{Participated in homework assignments development, Facilitated study groups work and peer learning}
-    \adcvrowmulti{\textit{Data Science minor (2018-2019)}}
-    \adcvrowmulti{Developed and taught Tutorial on data visualization with ggplot and date-time data processing with lubridate, Created and assessed tests}
-    \adcvrowmulti{\textit{Theory Construction and Model Building (2018-2019, 2019-2020)}}
-    \adcvrowmulti{Developed and taught Agent based models on networks and AI, Created NetLogo models, Integrated decision theories into ABM framework, held seminars in Zoom and MS Teams}
-      \adcvrowskip
-    \adcvrowtwo{\textbf{\href{http://wdl-hse.org/en}{Women Data Leaders in Russia}}, Co-ambassador}{2018--2019}
-    \adcvrowmulti{Organization of poster section at the WiDS conference}
-    \adcvrowmulti{Interview with Jana Diesner and Milena Tsvetcova}
-    \adcvrowmulti{Edited videos for YouTube channel}
-  \adcvrowskip
-  \adcvrowtwo{\textbf{\href{https://spb.hse.ru/en/fmcs/math/sociocomp/}{Machine Learning and Social Computing Research Group}}, Junior member}{2017--2018}
-%   \ifextended
-    \adcvrowmulti{Social Network Analysis of eSports transfers with ERGMs}
+\adcvrowtwo{\textbf{\href{https://slate.uib.no}{Centre for the Science of Learning \& Technology (SLATE)} in University of Bergen}, Research intern, Supervisor: Dr. Mohammad Khalil}{2020--Present}
+    \adcvrowmulti{Create course recommendation system for exchange students (\href{https://ceres.apps.slate.uib.no/interview/}{CERES})}
+    \adcvrowmulti{Took several interviews with exchange students}
+    \adcvrowmulti{Set up an experiment to test perception of different course recommendation algorithms by students}
+    \adcvrowmulti{Co-authored a poster paper for Learning Analytics and Knowledge 2021 conference}
     \adcvrowskip
-\fi
+\adcvrowtwo{\textbf{\href{https://electives.hse.ru/minor_data_spb/}{Data Science minor} at HSE University}, Instructor}{2020--present}
+%   \ifextended
+    \adcvrowmulti{
+    Prepared seminars on introduction to Data Science, created interactive tutor exercises.
+    Participated in learning design for transferring the course to online mode. Working on the tools to support team preference elicitation and matching and reflective prompts to support team self-regulation throughout the group project.
+    }
+    \adcvrowskip
+
+\adcvrowtwo{\textbf{\href{https://spb.hse.ru/en/fmcs/math/sociocomp/}{Machine Learning and Social Computing} Research and Study Group at HSE University}, Junior member, Supervisor: Prof. A. Suvorova}{2017--2018; 2019--2020}
+%   \ifextended
+\adcvrowmulti{My main Project was related to Social Network Analysis of eSports transfers with ERGMs (with I. Musabirov)}
+\adcvrowmulti{I also worked on tutorials for junior students on Bayesian network analysis and xAI and model interpretation for Data Science minor}
+    \adcvrowskip
+% \fi
+
+
+
+\adcvrowtwo{\textbf{\href{https://spb.hse.ru/en/ba/soc/}{HSE University}}, Teaching assistant}{2017--2020}
+%   \ifextended
+    \adcvrowmulti{\textit{Data Science minor (2018-2019), Lecturer: Prof. A. Suvorova}}
+    \adcvrowmulti{Developed and taught Tutorial on data visualization with ggplot2 and date-time data processing with lubridate. Composed and assessed tests}
+    \adcvrowmulti{\textit{Agent-Based Modeling (2018-2019, 2019-2020), Lecturer: I. Musabirov}}
+    \adcvrowmulti{Developed a set of exercises on different ways to define agent logics (probabilistic models, decision rules) and integrate decision theories (TPB, DBI, DBO, RL) into ABM framework, developed a module on Agent-based network models, curated NetLogo models collection for the course, held tutorials in Zoom and MS Teams}
+      \adcvrowskip
+
 \end{adcvtabletwo}
+
 
 
 %%%%%%%%%%%%%%
@@ -104,30 +130,51 @@ University}, Sociology }{Sep--Dec 2016}
 %%%%%%%%%%%%%%
 
 \ifextended
-  \section{Courses}
+  \section{Extracurricular Schools \& Courses}
+\begin{adcvtabletwo}
 
-  \begin{adcvtabletwo}
-    \adcvrowtwo{\textbf{\href{https://coursera.org/share/28440e116cc2f8378a32d6200ea71be6}{Model Thinking}}, University of Michigan, Coursera}{October 2019}
-    \adcvrowskip
-    \adcvrowtwo{\textbf{\href{https://coursera.org/share/0e4a3d5c6d12238958f004e73722d5d1}{Social and Economic Networks: Models and Analysis}}, Stanford University, Coursera}{December 2019}
-    \adcvrowskip
-    \adcvrowtwo{\textbf{\href{https://coursera.org/share/b2dba3d060b8600b774b3540421684ed}{Think Again I: How to Understand Arguments}}, Duke University, Coursera}{February 2017}
-    \adcvrowskip
+\adcvrowtwo{\textbf{\href{http://behavelab.org/behave-summer-school/}{ESSA-BEHAVE Summer School on Agent-Based Modeling}} (Online)}{Sep 2020}
+\adcvrowmulti{I completed an Advanced track (3ECTS) with a focus on theory development and empirical research with ABM, agent-based network models, calibration and validation of ABM. School director: Prof. F. Squazzoni (University of Milan)}
+\adcvrowskip
+\adcvrowtwo{\textbf{Social Simulation Conference} (Stockholm, Sweden)}{Aug  2018}
+\adcvrowmulti{Using theories on human decision-making in ABMs}
+\adcvrowskip
+\adcvrowtwo{\textbf{Networks in the Global World 2018} (St.Petersburg, Russia)}{July  2018}
+\adcvrowmulti{Estimating
+dynamic network actor
+models (DyNAMs)
+with the goldfish software}
+\adcvrowskip
+\adcvrowtwo{\textbf{XXXVIII Sunbelt Conference}, (Utrecht, Netherlands)}{June  2018}
+\adcvrowmulti{Introduction to ERGMs using statnet}
+\adcvrowskip
+\adcvrowtwo{\textbf{\href{https://coursera.org/share/cb76fd669b80df905b52b51001f733f7}{Introduction to Reinforcement Learning in Python}}, Coursera Project Network}{Jan 2021}
+\adcvrowskip
+\adcvrowtwo{\textbf{\href{https://coursera.org/share/ea6b910e738f008bad714be568eb66e6}{Experimental Design Basics}}, Arizona State University, Coursera}{Jan 2021}
+\adcvrowskip  
+\adcvrowtwo{\textbf{\href{https://coursera.org/share/ead2e794a493e30f6e23ce91995bdee1}{Computer Simulations}}, University of California, Coursera}{Aug 2020}
+\adcvrowskip
+\adcvrowtwo{\textbf{\href{https://coursera.org/share/0e4a3d5c6d12238958f004e73722d5d1}{Social and Economic Networks: Models and Analysis}}, Stanford University, Coursera}{Dec 2019}
+\adcvrowskip
+\adcvrowtwo{\textbf{\href{https://coursera.org/share/28440e116cc2f8378a32d6200ea71be6}{Model Thinking}}, University of Michigan, Coursera}{Oct 2019}
+% \adcvrowskip
+    % \adcvrowtwo{\textbf{\href{https://coursera.org/share/b2dba3d060b8600b774b3540421684ed}{Think Again I: How to Understand Arguments}}, Duke University, Coursera}{February 2017}
+    % \adcvrowskip
     
-    % Joke
+    % % Joke
     
     
-    \adcvrowtwo{\textbf{Design Thinking},  Marius Jones, Norwegian School of Economics}{November 2019}
-    \adcvrowskip
+    % \adcvrowtwo{\textbf{Design Thinking},  Marius Jones, Norwegian School of Economics}{November 2019}
+    % \adcvrowskip
     
     % DataCamp
     
     
-    \adcvrowtwo{\textbf{\href{https://www.datacamp.com/statement-of-accomplishment/course/9aa50d16c6bd3dd77d4ee08bd1132fd0cface30c}{Correlation and Regression in R}}, DataCamp}{February 2019}
-    \adcvrowskip
-    \adcvrowtwo{\textbf{\href{https://www.datacamp.com/statement-of-accomplishment/course/2731211f37c5e8ee98bcc420aa137650aed32a14}{Cluster Analysis in R}}, DataCamp}{January 2020}
-    \adcvrowskip
-    \adcvrowtwo{\textbf{\href{https://www.datacamp.com/statement-of-accomplishment/course/7821f0d0d1bc50f897eb8433dc419b687ee6bb71}{Machine Learning for Marketing Analytics in R}}, DataCamp}{January 2020}
+    % \adcvrowtwo{\textbf{\href{https://www.datacamp.com/statement-of-accomplishment/course/9aa50d16c6bd3dd77d4ee08bd1132fd0cface30c}{Correlation and Regression in R}}, DataCamp}{February 2019}
+    % \adcvrowskip
+    % \adcvrowtwo{\textbf{\href{https://www.datacamp.com/statement-of-accomplishment/course/2731211f37c5e8ee98bcc420aa137650aed32a14}{Cluster Analysis in R}}, DataCamp}{January 2020}
+    % \adcvrowskip
+    % \adcvrowtwo{\textbf{\href{https://www.datacamp.com/statement-of-accomplishment/course/7821f0d0d1bc50f897eb8433dc419b687ee6bb71}{Machine Learning for Marketing Analytics in R}}, DataCamp}{January 2020}
   \end{adcvtabletwo}
 
 %   \section{Accreditations}
@@ -157,79 +204,109 @@ University}, Sociology }{Sep--Dec 2016}
 
 %   \end{adcvtabletwo}
 
-  \section{Computer skills}
 
-  Data analysis: R (tidyverse, igraph, rvest, bnlearn), Python (pandas, gensim, aiogram)
 
-  System administration: Linux (Ubuntu), Git, \href{https://github.com/vvseva/}{Github: vvseva}
 
-  Desktop publishing: \LaTeX, Microsoft Office
-  
-  Other: NetLogo (Agent-Based Modeling), Prolog (First-order logic, Knowledge representation)
-  
-  Media editing: Adobe Premiere Pro, Adobe After Effects, Adobe Photoshop 
-\fi
 
-\section{Languages}
+% \fi
 
-Mother tongue: \textbf{Russian} 
-
-Other Languages: \textbf{English} -- C1, (IELTS, Dec 2019)
+\section{Conference Publications \& Presentations}\label{sec:publications}
 
 \ifextended
-  \section{Personal interests}
 
-  Science, Technology, Languages, Linguistics, Communication, Social Networks, Politics, Travelling, Photography, Food, Wine, Music, Comedy, Running, Hiking
-\fi
+    Poster "Creating a Course Recommendation System for Exchange Students" (with Mohammad Khalil) was accepted to The 11th International Conference on Learning Analytics \& Knowledge (LAK21) and will published in companion proceedings.
 
-\section{Scientific activities}\label{sec:publications}
-
-\ifextended
   \begin{refsection}
-  
-    \nocite{musabirov_teaching_2020}
+      
+    \nocite{musabirov_teaching_2020}%добавить ссылку на постер
     \nocite{marchenko_analysis_2018}
     \nocite{suschevskiy_network_2018}
-    
-    \printbibliography[title={Publications}, heading=subbibliography]
-  \end{refsection}
-
-  \begin{refsection}
-  
     \nocite{Sunbelt2020}
-    \nocite{SIGCSE2020}
+    %\nocite{SIGCSE2020}
     \nocite{LASINORDIC2019}
     \nocite{ICCSS2019}
     \nocite{INAS2019}
     \nocite{Netglow2018}
     \nocite{Sunbelt2018}
     
-    \printbibliography[title={Conferences}, heading=subbibliography]
+   \printbibliography[title={\vspace{-0.2cm}}, heading=subbibliography]
   \end{refsection}
 
-\section{Selected Courses}
+% \section{Selected Courses}
 
-  \begin{adcvtabletwo}
-    \adcvrowtwo{Data Analysis in Sociology}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Research Topics in Technology Enhanced Learning}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Social research}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Applications and Practice of Data Science}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Methodology and Methods for Sociological Research}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Research Seminar Analytical ``Sociology and Big Data''}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Information Systems}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Data Mining and Elements of Machine Learning}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Programming with Data and Reproducible Research}{Excellent}
-        \adcvrowskip
-    \adcvrowtwo{Computational Methods for Text Analysis}{Excellent}
+%   \begin{adcvtabletwo}
+%     \adcvrowtwo{Data Analysis in Sociology}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Research Topics in Technology Enhanced Learning}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Social research}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Applications and Practice of Data Science}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Methodology and Methods for Sociological Research}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Research Seminar Analytical ``Sociology and Big Data''}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Information Systems}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Data Mining and Elements of Machine Learning}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Programming with Data and Reproducible Research}{Excellent}
+%         \adcvrowskip
+%     \adcvrowtwo{Computational Methods for Text Analysis}{Excellent}
     
+% \end{adcvtabletwo}
+
+
+\section{Scholarships and Awards}
+\begin{adcvtabletwo}
+\adcvrowtwo{\textbf{HSE University} 50\% tuition fee scholarship for the top of a cohort by GPA}{}
+\adcvrowtwo{\textbf{HSE University} travel grant for presenting poster at 5th International Conference on Computational Social Science
+July 17-20, 2019, University of Amsterdam, The Netherlands}{}
+\adcvrowtwo{\textbf{HSE University} travel grant for presenting poster at The 51st ACM Technical Symposium on Computer Science Education
+March 11-14, 2020, Portland, OR, USA}{}
+\adcvrowtwo{\textbf{University of Bergen} Exchange Scholarship in the framework of Capacity Building in Technology Enhanced Learning Project}{}
 \end{adcvtabletwo}
+\section{Volunteer Experience}\label{sec:projects}
+
+\begin{adcvtabletwo}
+
+\adcvrowtwo{\textbf{\href{http://wdl-hse.org/en}{Women Data Leaders in Russia}}, Co-ambassador}{2018--2020}
+    \adcvrowmulti{Organization of poster section at the Women in Data Science at HSE conference}
+    \adcvrowmulti{Interview with Jana Diesner and Milena Tsvetkova}
+    \adcvrowmulti{Edited interviews for \href{https://www.youtube.com/channel/UCJ_QT37_2IST3F6wD1rZnGw/videos}{YouTube channel} to encourage more people in Data Science}
+  \adcvrowskip
+
+% \fi
+\end{adcvtabletwo}
+
+\section{Computer skills}
+
+Data analysis: R (tidyverse, igraph, rvest, bnlearn, ERGM); Python (pandas, aiogram);
+
+Machine Learning: R (tidymodels, rpart, LDA, stm); Python (Tensorflow, gensim);
+
+Visualization: R (ggplot2, visNetwork, plotly, shinydashboard), Tableau;
+
+System administration: Linux (Ubuntu), Git, \href{https://github.com/vvseva/}{Github: vvseva};
+
+Desktop publishing: \LaTeX;
+  
+Other: NetLogo (Agent-Based Modeling), Prolog (First-order logic, Knowledge representation);
+  
+Media editing: Adobe Premiere Pro, Adobe After Effects, Adobe Photoshop, Open Broadcast Software;
+\fi
+
+\section{Languages}
+
+Mother tongue: \textbf{Russian} 
+
+Other Languages: \textbf{English} -- C1 (7.5), (IELTS, Dec 2019)
+
+% \ifextended
+%   \section{Personal interests}
+
+%   Science, Technology, Languages, Linguistics, Communication, Social Networks, Politics, Travelling, Photography, Food, Wine, Music, Comedy, Running, Hiking
+% \fi
 
 \end{document}
