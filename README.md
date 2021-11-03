@@ -1,3 +1,6 @@
+
+[Download résumé](Vsevolod_Suschevskiy_sCV.pdf)
+
 # Adaptive CV (adcv) LaTeX class and template
 
 Adaptive CV allows to compile different variants of a CV (e.g., a résumé and an extended CV) from a single LaTeX source. It is particularly suitable for academic CVs but flexible enough to be used with any CVs.
@@ -43,10 +46,9 @@ The `\adcvpresentation{`*\<title\>*`}{`*\<conference\>*`}` prints an item in the
 
 ## License
 
-Copyright 2016-2017 [Alessandro Rossini](https://alessandrorossini.org).  
 This work may be distributed and/or modified under the conditions of the [LaTeX Project Public License (LPPL)](http://www.latex-project.org/lppl.txt) version 1.3 or later.  
 This work consists of the files `adcv.cls`, `adcv_en.def`, `bib_alessandro_rossini.bib`, and `cv_alessandro_rossini_en.tex`.
 
 ## Acknowledgements
 
-Adaptive CV is inspired by [Friggeri CV](https://www.overleaf.com/latex/templates/friggeri-cv-template/hmnchbfmjgqh) and [Europe CV](https://www.ctan.org/pkg/europecv). It uses the [Roboto fonts](https://fonts.google.com/specimen/Roboto) and the [Multimedia Collection icons](http://www.flaticon.com/packs/multimedia-collection).
+Adaptive CV is inspired by [Friggeri CV](https://www.overleaf.com/latex/templates/friggeri-cv-template/hmnchbfmjgqh) and [Europe CV](https://www.ctan.org/pkg/europecv). It uses the [Roboto fonts](https://fonts.google.com/specimen/Roboto) and the [Multimedia Collection icons](http://www.flaticon.com/packs/multimedia-collection). Original template by [Alessandro Rossini](https://alessandrorossini.org).  
