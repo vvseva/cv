@@ -291,7 +291,7 @@
   \colorlet{linktext}{lightgray}
 \else
   \colorlet{regulartext}{gray}
-  \colorlet{headerfill}{teal}
+  \colorlet{headerfill}{gray}
   \colorlet{headertext}{white}
   \colorlet{lighttext}{lightgray}
   \colorlet{linktext}{teal}
@@ -365,6 +365,7 @@
 \newcommand*{\adcvphone}[1]{\def\adcv@phone{#1}}
 \newcommand*{\adcvemail}[3]{\def\adcv@emaillocal{#1}\def\adcv@emaildomainsecond{#2}\def\adcv@emaildomaintop{#3}}
 \newcommand*{\adcvwebsite}[2]{\def\adcv@websiteurl{#1}\def\adcv@websitetext{#2}}
+\newcommand*{\adcvtwitter}[2]{\def\adcv@twitterurl{#1}\def\adcv@twittertext{#2}}
 
 \graphicspath{{icons/}}
 
@@ -375,7 +376,7 @@
   \newcommand*{\aticon}{\includegraphics[height=0.75em]{at.png}}
   \newcommand*{\doticon}{\includegraphics[height=0.1em]{dot.png}}
 \fi
-
+\newcommand*{\twittericon}{\includegraphics[height=0.75em]{twitter-square-logo.png}}
 \newcommand*{\chaticon}{\includegraphics[height=0.75em]{chat.pdf}}
 \newcommand*{\envelopeicon}{\includegraphics[height=0.75em]{envelope.pdf}}
 \newcommand*{\houseicon}{\includegraphics[height=0.75em]{house.pdf}}
@@ -415,6 +416,16 @@
     \fi%
   \else%
     \def\adcv@website{}%
+  \fi%
+  
+  \ifdefined\adcv@twitterurl%
+    \ifx\adcv@twitterurl\empty%
+      \def\adcv@twitter{}%
+    \else%
+      \def\adcv@twitter{\twittericon~\href{\adcv@twitterurl}{\adcv@twittertext}}%
+    \fi%
+  \else%
+    \def\adcv@twitter{}%
   \fi%
 
   \begin{center}%
