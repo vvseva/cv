@@ -32,45 +32,6 @@
   \printtrue
 }
 
-\DeclareOption{bg}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_bg.def}{}{
-      \ClassError{adcv}{Bulgarian definition file 'adcv_bg.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{hr}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_hr.def}{}{
-      \ClassError{adcv}{Croatian definition file 'adcv_hr.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{cs}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_cs.def}{}{
-      \ClassError{adcv}{Czech definition file 'adcv_cs.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{da}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_da.def}{}{
-      \ClassError{adcv}{Danish definition file 'adcv_da.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{nl}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_nl.def}{}{
-      \ClassError{adcv}{Dutch definition file 'adcv_nl.def' not found.}
-    }
-  }
-}
 
 \DeclareOption{en}{
   \AtEndOfPackage{
@@ -80,157 +41,7 @@
   }
 }
 
-\DeclareOption{et}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_et.def}{}{
-      \ClassError{adcv}{Estonian definition file 'adcv_et.def' not found.}
-    }
-  }
-}
 
-\DeclareOption{fi}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_fi.def}{}{
-      \ClassError{adcv}{Finnish definition file 'adcv_fi.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{fr}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_fr.def}{}{
-      \ClassError{adcv}{French definition file 'adcv_fr.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{de}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_de.def}{}{
-      \ClassError{adcv}{German definition file 'adcv_de.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{el}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_el.def}{}{
-      \ClassError{adcv}{Greek definition file 'adcv_el.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{hu}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_hu.def}{}{
-      \ClassError{adcv}{Hungarian definition file 'adcv_hu.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{ga}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_ga.def}{}{
-      \ClassError{adcv}{Irish definition file 'adcv_ga.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{it}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_it.def}{}{
-      \ClassError{adcv}{Italian definition file 'adcv_it.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{lv}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_lv.def}{}{
-      \ClassError{adcv}{Latvian definition file 'adcv_lv.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{lt}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_lt.def}{}{
-      \ClassError{adcv}{Lithuanian definition file 'adcv_lt.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{mt}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_mt.def}{}{
-      \ClassError{adcv}{Maltese definition file 'adcv_mt.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{no}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_no.def}{}{
-      \ClassWarningNoLine{adcv}{Norwegian definition file 'adcv_no.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{pl}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_pl.def}{}{
-      \ClassError{adcv}{Polish definition file 'adcv_pl.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{pt}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_pt.def}{}{
-      \ClassError{adcv}{Portuguese definition file 'adcv_pt.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{ro}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_ro.def}{}{
-      \ClassError{adcv}{Romanian definition file 'adcv_ro.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{sk}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_sk.def}{}{
-      \ClassError{adcv}{Slovak definition file 'adcv_sk.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{sl}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_sl.def}{}{
-      \ClassError{adcv}{Slovenian definition file 'adcv_sl.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{es}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_es.def}{}{
-      \ClassWarningNoLine{adcv}{Spanish definition file 'adcv_es.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{sv}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_sv.def}{}{
-      \ClassWarningNoLine{adcv}{Swedish definition file 'adcv_sv.def' not found.}
-    }
-  }
-}
 
 \DeclareOption*{
   \PassOptionsToClass{\CurrentOption}{article}
@@ -288,44 +99,68 @@
   \colorlet{headerfill}{white}
   \colorlet{headertext}{black}
   \colorlet{lighttext}{gray}
-  \colorlet{linktext}{lightgray}
+  \colorlet{linktextcolor}{lightgray}
 \else
   \colorlet{regulartext}{gray}
   \colorlet{headerfill}{gray}
   \colorlet{headertext}{white}
   \colorlet{lighttext}{lightgray}
-  \colorlet{linktext}{teal}
+  \colorlet{linktextcolor}{teal}
 \fi
 
-% Hyperref
+% Header
 
-\ifextended
-  \AtBeginDocument{%
+\RequirePackage{tikz}
+
+\newcommand*{\adcvname}[2]{\def\adcv@firstname{#1}\def\adcv@lastname{#2}}
+\newcommand*{\adcvtitle}[1]{\def\adcv@title{#1}}
+% \newcommand*{\adcvaddress}[4]{\def\adcv@street{#1}\def\adcv@postalcode{#2}\def\adcv@locality{#3}\def\adcv@country{#4}}
+\newcommand*{\adcvaddress}[2]{\def\adcv@locality{#1}\def\adcv@country{#2}}
+\newcommand*{\adcvphone}[1]{\def\adcv@phone{#1}}
+\newcommand*{\adcvemail}[3]{\def\adcv@emaillocal{#1}\def\adcv@emaildomainsecond{#2}\def\adcv@emaildomaintop{#3}}
+\newcommand*{\adcvwebsite}[2]{\def\adcv@websiteurl{#1}\def\adcv@websitetext{#2}}
+% \newcommand*{\adcvwebsitefixed}[1]{\def\adcv@websitehref{#1}}
+\newcommand*{\adcvtwitter}[2]{\def\adcv@twitterurl{#1}\def\adcv@twittertext{#2}}
+
+% Hyperref
+\RequirePackage{hyperref}
+
     \hypersetup{%
       colorlinks=true,%
-      citecolor=linktext,%
-      linkcolor=linktext,%
-      urlcolor=linktext,%
+      citecolor=linktextcolor,%
+      linkcolor=linktextcolor,%
+      urlcolor=  teal,%
       pdfauthor={\adcv@firstname~\adcv@lastname},%
       pdfsubject={\adcv@firstname~\adcv@lastname\adcv@cvofkey},%
       pdftitle={\adcv@firstname~\adcv@lastname\adcv@cvofkey}%
     }%
+
+\ifextended
+  \AtBeginDocument{%
+    % \hypersetup{%
+    %   colorlinks=true,%
+    %   citecolor=linktextcolor,%
+    %   linkcolor=linktextcolor,%
+    %   urlcolor=  teal,%
+    %   pdfauthor={\adcv@firstname~\adcv@lastname},%
+    %   pdfsubject={\adcv@firstname~\adcv@lastname\adcv@cvofkey},%
+    %   pdftitle={\adcv@firstname~\adcv@lastname\adcv@cvofkey}%
+    % }%
   }
 \else
   \AtBeginDocument{%
-    \hypersetup{%
-      colorlinks=true,%
-      citecolor=linktext,%
-      linkcolor=linktext,%
-      urlcolor=linktext,%
-      pdfauthor={\adcv@firstname~\adcv@lastname},%
-      pdfsubject={\adcv@firstname~\adcv@lastname\adcv@resumeofkey},%
-      pdftitle={\adcv@firstname~\adcv@lastname\adcv@resumeofkey}%
-    }%
+    % \hypersetup{%
+    %   colorlinks=true,%
+    %   citecolor=linktextcolor,%
+    %   linkcolor=linktextcolor,%
+    %   % urlcolor=linktextcolor,%
+    %   pdfauthor={\adcv@firstname~\adcv@lastname},%
+    %   pdfsubject={\adcv@firstname~\adcv@lastname\adcv@resumeofkey},%
+    %   pdftitle={\adcv@firstname~\adcv@lastname\adcv@resumeofkey}%
+    % }%
   }
 \fi
 
-\RequirePackage{hyperref}
 
 % Fonts
 
@@ -346,26 +181,16 @@
 \newfontfamily\thinheader[Path = fonts/, Color=headertext]{Roboto-Thin.ttf}
 
 \newcommand*{\lighttext}{\addfontfeature{Color=lighttext}}
-\newcommand*{\linktext}{\addfontfeature{Color=linktext}}
+\newcommand*{\linktextfunc}[1]{\addfontfeature{Color=linktextcolor}}
 
-\def\@sectioncolor#1#2#3{{\addfontfeature{Color=linktext} #1#2#3}}
-\def\HyColor@@@@UseColor#1\@nil{\addfontfeatures{Color=linktext}}
+% \def\@sectioncolor#1#2#3{{\addfontfeature{Color=linktext} #1#2#3}} 
+% different header color for the first 3 letters
+\def\HyColor@@@@UseColor#1\@nil{\addfontfeatures{Color=linktextcolor}} % color headings 2
 
-\renewcommand{\section}[1]{{\Large\bfseries\@sectioncolor #1}}
+% \renewcommand{\section}[1]{{\Large\bfseries\@sectioncolor #1}}
+\renewcommand{\section}[1]{{\Large\bfseries #1}}
 \renewcommand{\subsection}[2]{\large\bfseries #2}
 
-% Header
-
-\RequirePackage{tikz}
-
-\newcommand*{\adcvname}[2]{\def\adcv@firstname{#1}\def\adcv@lastname{#2}}
-\newcommand*{\adcvtitle}[1]{\def\adcv@title{#1}}
-% \newcommand*{\adcvaddress}[4]{\def\adcv@street{#1}\def\adcv@postalcode{#2}\def\adcv@locality{#3}\def\adcv@country{#4}}
-\newcommand*{\adcvaddress}[2]{\def\adcv@locality{#1}\def\adcv@country{#2}}
-\newcommand*{\adcvphone}[1]{\def\adcv@phone{#1}}
-\newcommand*{\adcvemail}[3]{\def\adcv@emaillocal{#1}\def\adcv@emaildomainsecond{#2}\def\adcv@emaildomaintop{#3}}
-\newcommand*{\adcvwebsite}[2]{\def\adcv@websiteurl{#1}\def\adcv@websitetext{#2}}
-\newcommand*{\adcvtwitter}[2]{\def\adcv@twitterurl{#1}\def\adcv@twittertext{#2}}
 
 \graphicspath{{icons/}}
 
@@ -385,7 +210,7 @@
 
 \ifonline
   \def\adcv@address{\placeicon~\adcv@locality,~\adcv@country}
-  \def\adcv@email{\envelopeicon~{\linktext\adcv@emaillocal\aticon\adcv@emaildomainsecond\doticon\adcv@emaildomaintop}}
+  \def\adcv@email{\envelopeicon~{\linktextfunc{\adcv@emaillocal\aticon\adcv@emaildomainsecond\doticon\adcv@emaildomaintop}}}
   \def\adcv@telephone{}
 \else
   \def\adcv@address{\placeicon~\adcv@locality,~\adcv@country
@@ -408,11 +233,14 @@
 
   \vspace{\baselineskip}%
 
+  % \ifdefined\adcv@websitehref%
+  %   \ifx\adcv@websitehref\empty%
   \ifdefined\adcv@websiteurl%
     \ifx\adcv@websiteurl\empty%
       \def\adcv@website{}%
     \else%
-      \def\adcv@website{\houseicon~\href{\adcv@websiteurl}{\adcv@websitetext}}%
+      \def\adcv@website{\houseicon~\href{\adcv@websiteurl}{~\adcv@websitetext}}%
+        % \def\adcv@website{\houseicon~\adcv@websitehref}%
     \fi%
   \else%
     \def\adcv@website{}%
