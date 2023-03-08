@@ -2,6 +2,8 @@
 \documentclass[a4paper, extended]{adcv}
 % online
 \usepackage[british]{babel}
+\usepackage{xcolor}
+\usepackage{hyperref}
 \usepackage{geometry}
 \usepackage[super]{nth}
 \geometry{margin=0.75in}
@@ -19,13 +21,14 @@
 
 \adcvname{Vsevolod}{Suschevskiy}
 \adcvtitle{Resumé}
-\adcvaddress{St.Petersburg}{Russia}
+\adcvaddress{Evanston}{United States}
 \adcvwebsite{https://vvseva.netlify.app}{vvseva.netlify.app}
 \adcvemail{vvsuschevskiy}{gmail}{com}
-\adcvphone{+7 921 644-22-43}
+\adcvphone{+1 224-203-862}
 \adcvdate{\today}
 
 % \lastupdated
+
 
 \begin{document}
 
@@ -49,21 +52,22 @@
  \adcvrowtwo{\href{https://spb.hse.ru/en/ma/computer/}{\textbf{PhD Student at Technology and Social Behaviour}} {Northwestern University), USA, Evanston}, }{2022--2028}
 
     \adcvrowmulti{
-I will be working with \href{https://nosh.northwestern.edu/}{Noshir Contractor} at SONIC on Human-AI Interaction 
+I am working with \href{https://nosh.northwestern.edu/}{Noshir Contractor} at SONIC on Human-AI Interaction within Computer-Supported Cooperative Work And Social Computing lenses
     }
    
- 
- \adcvrowtwo{\href{https://spb.hse.ru/en/ma/computer/}{\textbf{MSc Information Systems and Human-Computer Interaction}} {HSE University (National Research University Higher School of Economics), Russia}, }{2020--2022}
+         \adcvrowskip
+ \adcvrowtwo{\href{https://spb.hse.ru/en/ma/computer/}{\textbf{MSc Information Systems and Human-Computer Interaction} (with distinction)} {HSE University (National Research University Higher School of Economics), Russia}, }{2020--2022}
 
     \adcvrowmulti{
-    At HSE, I mostly focused on research-oriented courses and data science courses, and currently have a 8.0/10.0 GPA.
+    At HSE, I mostly focused on research-oriented HCI, machine learning and design courses.
     }
     \adcvrowmulti{
-    For my master's thesis I am preparing a conjoint experiment in R Shiny to explore the effect of different motivational types in interaction with social influence and geospatial information in Citizen Science project. Proposal draft is available at the 
+    My thesis dealt with designing virtual labs on crowdsourcing platform to test UX and behavioral aspects of self-nudging.
+    For my term project I worked on a conjoint experiment in R Shiny to explore the effect of different motivational types in interaction with social influence and geospatial information in Citizen Science project. Proposal draft is available at the 
     \href{https://osf.io/nr5m9/}
     {Open Science Framework} and \href{https://vvseva.shinyapps.io/vignexp/}{MVP is hosted on shinyapps}.
     }
-
+        \adcvrowskip
 \adcvrowtwo{\href{https://spb.hse.ru/en/ba/soc/}{\textbf{BA Sociology and Social Informatics, minor in Data Science}}, HSE University (National Research University Higher School of Economics), Russia}{2017--2020}
     
         \adcvrowmulti{
@@ -102,14 +106,20 @@ I will be working with \href{https://nosh.northwestern.edu/}{Noshir Contractor} 
 \section{Research and Professional Experience}\label{sec:research}
 
 \begin{adcvtabletwo}
-\adcvrowtwo{\textbf{\href{https://slate.uib.no}{Centre for the Science of Learning \& Technology (SLATE)} in University of Bergen}, Research intern, Supervisor: Dr. Mohammad Khalil}{2020--Present}
+\adcvrowtwo{\textbf{\href{https://atlas.northwestern.edu/}{ATLAS lab} in Northwestern University}, Graduate Research Assitant, Supervisor: Leslie DeChurch}{Mar - Aug 2023}
+    \adcvrowmulti{Designing virtual lab experiment for studying human AI teams. Yes we use GPT 3.5}
+    \adcvrowskip
+\adcvrowtwo{\textbf{\href{https://sonic.northwestern.edu/}{The Science of Networks in Communities (SONIC)} in Northwestern University}, Graduate Research Assitant, Supervisor: Noshir Contractor}{2022--2028}
+    \adcvrowmulti{Social Network Analysis of Human-AI collaboration (The Signatures of Success in Human-Agent Teams)}
+    \adcvrowskip
+\adcvrowtwo{\textbf{\href{https://slate.uib.no}{Centre for the Science of Learning \& Technology (SLATE)} in University of Bergen}, Research intern, Supervisor: Dr. Mohammad Khalil}{2020--2021}
     \adcvrowmulti{Create course recommendation system for exchange students (\href{https://ceres.apps.slate.uib.no/interview/}{CERES})}
     \adcvrowmulti{Took several interviews with exchange students}
     \adcvrowmulti{Set up an experiment to test perception of different course recommendation algorithms by students}
     \adcvrowmulti{Co-authored a \href{https://www.researchgate.net/publication/350874550_Creating_a_Course_Recommendation_System_for_Exchange_Students}{poster/paper} for Learning Analytics and Knowledge 2021 conference}
     \adcvrowmulti{Did a statistical analysis of the classroom intervention using Mixed Models for clustering and SEM to explain connection between learner's motivation, app usage and learning outcomes.}
     \adcvrowskip
-\adcvrowtwo{\textbf{\href{https://electives.hse.ru/minor_data_spb/}{Data Science minor} at HSE University}, Invited Lecturer}{2020--present}
+\adcvrowtwo{\textbf{\href{https://electives.hse.ru/minor_data_spb/}{Data Science minor} at HSE University}, Invited Lecturer}{2020--2022}
 %   \ifextended
     \adcvrowmulti{
     Prepared seminars on introduction to Data Science, created interactive tutor exercises.
@@ -266,12 +276,12 @@ with the goldfish software}
 
 \ifextended
     \begin{refsection}
-  
+        \nocite{HCID2022}
         \nocite{suschevskiy_creating_2021}
-    \nocite{musabirov_teaching_2020}%добавить ссылку на постер
+        \nocite{musabirov_teaching_2020}%добавить ссылку на постер
         \nocite{marchenko_analysis_2018}
         \nocite{suschevskiy_network_2018}
-    \nocite{Sunbelt2020}
+        \nocite{Sunbelt2020}
     %\nocite{SIGCSE2020}
     % \nocite{LASINORDIC2019}
     \nocite{ICCSS2019}
@@ -326,13 +336,15 @@ It is supported my MSc thesis experimental research on behavioural nudges and bo
 \adcvrowtwo{\textbf{Travel grant} for presenting a poster at \nth{5} International Conference on Computational Social Science, University of Amsterdam, The Netherlands, HSE University}{Jul 2019}
 
 % add NUG and fix uni order
-\adcvrowtwo{\textbf{50\% tuition fee scholarship} for the top of a cohort by GPA, HSE University}{}
+\adcvrowtwo{\textbf{50\% tuition fee scholarship} for the top of a cohort by GPA, HSE University}{ 2018-2020}
 
 \end{adcvtabletwo}
 \section{Volunteer Experience}\label{sec:projects}
 
 \begin{adcvtabletwo}
 
+\adcvrowtwo{\textbf{\href{https://helpdesk.media/en}{HELPDESK.MEDIA}}, Volunteer }{Sep 2022}
+    \adcvrowmulti{Consulting on how to leave, evacuate, protect yourself from war or police, transfer money, or set up a VPN.}
 \adcvrowtwo{\textbf{\href{http://wdl-hse.org/en}{Women Data Leaders in Russia}}, Co-ambassador}{2018--2020}
     \adcvrowmulti{Organization of poster section at the Women in Data Science at HSE conference}
     \adcvrowmulti{Interview with Jana Diesner and Milena Tsvetkova}
@@ -342,17 +354,17 @@ It is supported my MSc thesis experimental research on behavioural nudges and bo
 % \fi
 \end{adcvtabletwo}
 
-\section{Computer skills}
+\section{Computational literacy}
 
 Data analysis: R (\textbf{tidyverse}, igraph, rvest, bnlearn, ERGM); Python (pandas, pyspark, networkx);
 
-Machine Learning: R (\textbf{tidymodels}, rpart, LDA, stm); Python (Tensorflow, gensim);
+Machine Learning: R (\textbf{tidymodels}, rpart, LDA, stm); Python (Tensorflow, spacy, gensim);
 
-Visualization: R (ggplot2, visNetwork, plotly, shinydashboard), Tableau;
+Visualization: R (ggplot2, visNetwork, plotly, shinydashboard), Tableau;  Python (Seaborn, Plotly);
 
 Interactive web apps: \textbf{R shiny}
 
-Data bases: SQL -- ClickHouse, noSQL -- Elasticsearch;
+Data bases: SQL -- ClickHouse, MongoDB, noSQL -- Elasticsearch;
 
 System administration: Linux (Ubuntu), \href{https://github.com/vvseva/}{Github};
 
@@ -370,6 +382,8 @@ Mother tongue: \textbf{Russian}
 Other Languages: \textbf{English} -- C1 (7.5), (IELTS, Dec 2019; IELTS, Nov 2021), 
 
 \textbf{Esperanto} -- studying for fun
+
+\textbf{Danish} -- 100 days on duo lingo 
 
 % \ifextended
 %   \section{Personal interests}
