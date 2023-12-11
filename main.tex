@@ -130,7 +130,7 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
+  \vspace{-10pt}\item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
       \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
@@ -158,7 +158,7 @@
 % CHANGED default leftmargin  0.15 in
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label={-}]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
 
 \color{text-grey}
@@ -183,8 +183,8 @@
             (5, -1.5) node[text width=4cm] (y1) {Social Network \\ 
             Analysis}
             (8, -1.5) node[text width=4cm] (y2) {Mechanism-based \\ explanations}
-        (-7,-0.5) node (z) {Machine Learning}
-            (-9, -1.75) node (z1) {xAI}
+        (-6,-0.75) node (z) {Machine Learning}
+            (-7, -1.75) node (z1) {xAI}
             (-5, -1.75) node (z2) {NLP}
         (0,-0.75) node (k) {Digital Experiments}
             (-1.5, -1.75) node[text width=4cm] (k1) {Design of \\ Experiments}
