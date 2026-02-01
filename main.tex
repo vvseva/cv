@@ -1,13 +1,12 @@
 %-------------------------
 % Resume in Latex
-% Author : Harshibar
-% Based off of: https://github.com/jakeryang/resume
+% Author : Vsevolod Suschevskiy
 % License : MIT
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
 
-\usepackage{latexsym}
+% --- PACKAGES ---
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -19,172 +18,101 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{xcolor}
-\usepackage[style=apa, backend=biber]{biblatex}
 \usepackage{tikz}
-    \usetikzlibrary{mindmap, positioning}
-% only for pdflatex
-% \input{glyphtounicode}
-
-% fontawesome
+\usetikzlibrary{mindmap, positioning}
 \usepackage{fontawesome5}
 
-% fixed width
-\usepackage[scale=0.95,lf]{FiraMono}
-
-% light-grey
-\definecolor{light-grey}{gray}{0.83}
-\definecolor{dark-grey}{gray}{0.3}
-\definecolor{text-grey}{gray}{.08}
-\definecolor{teal}{HTML}{008080}
-\definecolor{turquoise}{HTML}{40E0D0}
-
-
-\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
-\DeclareTextFontCommand{\texteb}{\ebseries}
-
-% custom underilne
-\usepackage{contour}
-\usepackage[normalem]{ulem}
-\renewcommand{\ULdepth}{1.5pt}
-\contourlength{0.8pt}
-
-\newcommand{\myuline}[1]{%
-  \uline{\phantom{#1}}%
-  \llap{\contour{white}{#1}}%
-}
-
-\newcommand{\MYhref}[2]{
-\myuline{\href{#1}{{#2}}}
-}%
-
-% \def\adcv@resumeofkey{'s Résumé}
-% \newcommand*{\adcvname}[2]{\def\adcv@firstname{#1}\def\adcv@lastname{#2}}
-% \newcommand*{\adcvtitle}[1]{\def\adcv@title{#1}}
-% \adcvname{Vsevolod}{Suschevskiy}
-
-\newcommand{\firstname}{Vsevolod}
-\newcommand{\lastname}{Suschevskiy}
-
-\hypersetup{%
-    % urlbordercolor = black,
-    % pdfborderstyle={/S/U/W 1},
-    pdfauthor={\firstname~\lastname},%
-    pdfsubject={\firstname~\lastname's Résumé},%
-    pdftitle={\firstname~\lastname's Résumé}%
-      }
-
-% custom font: helvetica-style
-\usepackage{tgheros}
-\renewcommand*\familydefault{\sfdefault} 
-%% Only if the base font of the document is to be sans serif
+% --- FONTS ---
+% Main body font (Source Sans Pro)
+\usepackage[default]{sourcesanspro}
 \usepackage[T1]{fontenc}
 
+% Secondary font for headers (TeX Gyre Heros - a Helvetica clone)
+\usepackage{tgheros}
+% Define command to switch to the header font
+\newcommand{\headerfont}{\fontfamily{qhv}\selectfont}
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+% Margins
+\usepackage[margin=0.5in, top=0.5in, bottom=0.5in]{geometry}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{0in}
-\addtolength{\evensidemargin}{1.5in}
-\addtolength{\textwidth}{-0.05in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-\setlist{leftmargin=0.15in, rightmargin=.5in}
-\titlespacing* % starred version: first paragraph is not indented
-    {\section} % <command>
-    {1em} % <left>
-    {3.5ex plus 1ex minus .2ex} % <before-sep>
-    {2.3ex plus .2ex} % <after-sep>
+% Bibliography
+\usepackage[style=apa, backend=biber, maxbibnames=99]{biblatex}
+\addbibresource{publications.bib}
 
-\urlstyle{same}
+% --- COLORS ---
+\definecolor{dark-grey}{gray}{0.3} % Text headers
+\definecolor{location-grey}{gray}{0.50} % Locations and Dates
+\definecolor{teal}{HTML}{008080} % Section underlines
+\definecolor{linkcolor}{HTML}{005555}
 
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
+% --- HYPERLINK SETUP ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    filecolor=linkcolor,
+    urlcolor=linkcolor,
+    pdftitle={Vsevolod Suschevskiy - CV},
+    pdfauthor={Vsevolod Suschevskiy}
+}
 
-% Sections formatting - serif
-% \titleformat{\section}{
-%   \vspace{2pt} \scshape \raggedright\large % header section
-% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
-
-% TODO EBSERIES
-% sans serif sections
-\titleformat {\section}{
-    % \bfseries 
-    \vspace{2pt}\hspace{-1pt} \raggedright \large  % header section
-}{}{0em}{}[\color{teal} {\titlerule[1pt ]} \vspace{-4pt}]
-
-% only for pdflatex
-% Ensure that generate pdf is machine readable/ATS parsable
-% \pdfgentounicode=1
-
-%-------------------------
-% Custom commands
+% --- CUSTOM COMMANDS ---
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-1pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
+% STYLE UPDATE:
+% #1 (School/Employer): Header Font, Dark Grey, NOT BOLD
+% #2 (Date): Location Grey
+% #4 (Location): Location Grey (Explicitly requested)
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-10pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
-      \hspace{2pt}\textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
-    \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      {\headerfont\color{dark-grey}#1} & {\color{location-grey}\small #2} \\
+      \textit{\small#3} & \textit{\color{location-grey}\small #4} \\
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
-    \end{tabular*}\vspace{-4pt}
+    \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      {\headerfont\color{dark-grey}#1} & {\color{location-grey}\small #2} \\
+    \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-% CHANGED default leftmargin  0.15 in
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[label={-}]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
 
-\color{text-grey}
+% Bullet points are hyphens (-)
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, label={-}]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+% Section Formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{teal}\titlerule \vspace{-5pt}]
 
-% publications?
-\addbibresource{publications.bib}
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --- HEADER & FOOTER ---
+\pagestyle{fancy}
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \begin{document}
-%----------HEADING----------
-\setlength{\belowcaptionskip}{-10pt}
+
+%---------- HEADER & MINDMAP ----------
 \vspace{-5pt}
 \begin{center}
-    % \textbf{\Huge Vsevolod Suschevskiy} \\ \vspace{5pt}
-    % \begin{figure}[h]
-  \centering
+  % ORIGINAL MINDMAP RESTORED
   \begin{tikzpicture}[]
-  \path (0,0) node (x) {\Huge{Vsevolod Suschevskiy}}
-        (6.5,-0.5) node (y) {Social\&Behavioral Sci}
+  \path (0,0) node (x) {\headerfont\Huge{Vsevolod Suschevskiy}}
+        (6.5,-0.5) node (y) {Social\&Behavioral Science}
             (5, -1.5) node[text width=2.5cm] (y1) {Network \\ 
             Science}
             (8, -1.5) node[text width=4cm] (y2) {Mechanism-based \\ explanations}
-        (-6.5,-0.75) node (z) {Machine Learning}
-            (-7.5, -1.75) node (z1) {xAI}
+        (-6.5,-0.75) node (z) {Human-Computer Interactions}
+            (-7.5, -1.75) node (z1) {Viz Science}
             (-5, -1.75) node (z2) {Causal ML}
         (0,-0.75) node (k) {Virtual Labs}
             (-1.5, -1.75) node[text width=3cm] (k1) {Design of \\ Experiments}
@@ -200,353 +128,166 @@
                 (k) -- (k1)
                 (k) -- (k2);
 \end{tikzpicture}
-  % \caption{Cognitive Map of Computational Social Science Experiments}
-  % \label{fig:cognitive-map}
-% \end{figure}
 \vspace{-5pt}
-    % \vspace{-10pt}
-    % \small \faPhone* \texttt{555.555.5555} \hspace{1pt} $|$
-    \hspace{1pt} \texttt{vvseva@u.northwestern.edu} \hspace{1pt} $|$ 
-     \hspace{1pt}  \hspace{2pt} \texttt{\MYhref{https://vvseva.quarto.pub}{vvseva.quarto.pub}} \hspace{1pt} $|$ 
-    % \hspace{1pt} \faYoutube \hspace{2pt} \texttt{harshibar} \hspace{1pt} $|$
-    \hspace{1pt}  \hspace{2pt}\texttt{Evanston, IL, USA}
-    \\ \vspace{-1pt}
-    \vspace{-5pt}
+    
+    % CONTACT INFO
+    \small 
+    \faMapMarker* \ Norrköping, Sweden \ $|$ \ 
+    \faEnvelope \ \href{mailto:vvseva@u.northwestern.edu}{vvseva@u.northwestern.edu} \ $|$ \ 
+    \faGlobe \ \href{https://vvseva.quarto.pub}{vvseva.quarto.pub} 
+    
 \end{center}
 
-%------MINDMAP--------
-
-
-
-
-
-%-----------EXPERIENCE-----------
-\section{Research Experience}\label{sec:research}
-
+%----------- EDUCATION -----------
+\section{Education}
   \resumeSubHeadingListStart
-      \resumeSubheading
-      {Northwestern University}{June 2022 - present}
-      {Graduate Research Assistant}{Evanston, IL}
-      % {\MYhref{https://sonic.northwestern.edu/}{SONIC lab}, \MYhref{https://atlas.northwestern.edu/}{ATLAS lab}}{Evanston, IL}
+    
+    % Current PhD (Sweden)
+    \resumeSubheading
+      {\href{https://liu.se/en}{Linköping University}}{June 2025 -- Present}
+      {Doktorand in Visualization \& Interaction Design}{Norrköping, Sweden}
       \resumeItemListStart
-        %\resumeItem{Advisor: Noshir Contractor}
-        \resumeItem{Tools and practices to support reproducible experimental research}
-        \resumeItem{Designing virtual lab experiment for studying collaboration in Human-AI teams}
-        \resumeItem{Data-Driven research of Human-AI Communication in teams, using multilayer-ERGMs (paper in progress)}
-        \resumeItem{Designing Transition from Wizard of Oz-style experiment to a digital experiment powered by LLMs and deployed on Empirica.ly platform (MVP ready)}
-         \resumeItem{Interactive survey to study unfriending at Facebook (pre-pilot)}
-         \resumeItem{Grant proposal writing}
-         \resumeItem{Undergraduate interns supervision}
+        \resumeItem{Wallenberg AI, Autonomous Systems and Software Program (WASP) Graduate School.}
+        \resumeItem{Visualization for Computational Social Science.}
       \resumeItemListEnd
 
-    % \resumeSubheading
-    %   {\MYhref{https://atlas.northwestern.edu/}{ATLAS lab} at Northwestern University}{Mar. - Aug. 2023}
-    %   {Graduate Research Assistant}{Evanston, IL}
-    %   \resumeItemListStart
-    %     \resumeItem{Advisor: Leslie DeChurch}
-    %     \resumeItem{Designing virtual lab experiment for studying collaboration in Human-AI teams}
-    %   \resumeItemListEnd
-
-  % \resumeSubHeadingListStart
-  %     \resumeSubheading
-  %     {\MYhref{https://sonic.northwestern.edu/}{SONIC lab} at Northwestern University}{June 2022 - present}
-  %     {Graduate Research Assistant}{Evanston, IL}
-  %     \resumeItemListStart
-  %       \resumeItem{Advisor: Noshir Contractor}
-  %       \resumeItem{Data-Driven research of Human-AI Communication in teams, using multilayer-ERGMs (paper in progress)}
-  %       \resumeItem{Designing Transition from Wizard of OZ style experiment to a digital experiment powered by LLMs and deployed on Empirica.ly platform (MVP ready)}
-  %        \resumeItem{Interactive survey to study unfriending at Facebook (pre-pilot)}
-  %        \resumeItem{Grant proposal writing}
-  %        \resumeItem{Undergraduate interns supervision}
-  %     \resumeItemListEnd
-
-  %   \resumeSubheading
-  %     {\MYhref{https://atlas.northwestern.edu/}{ATLAS lab} at Northwestern University}{Mar. - Aug. 2023}
-  %     {Graduate Research Assistant}{Evanston, IL}
-  %     \resumeItemListStart
-  %       \resumeItem{Advisor: Leslie DeChurch}
-  %       \resumeItem{Designing virtual lab experiment for studying collaboration in Human-AI teams}
-  %     \resumeItemListEnd
-      
-
-      
+    % Previous PhD work (Northwestern)
     \resumeSubheading
-      {\MYhref{https://slate.uib.no}{Centre For The Science Of Learning \& Technology, University of Bergen}}{Jan. 2020 -- Jun. 2021}
+      {\href{https://www.northwestern.edu/}{Northwestern University}}{June 2022 -- May 2025}
+      {PhD Candidate}{Evanston, IL, USA}
+      \resumeItemListStart
+        \resumeItem{Research: Human-AI teamwork, reproducible experimental tools.}
+        \resumeItem{Design of Experiments, Design of Technological Tools, Social Network Analysis.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {\href{https://www.hse.ru/en/}{HSE University}}{Sept. 2020 -- June 2022}
+      {MSc Information Systems and Human-Computer Interaction}{St. Petersburg, Russia}
+      \resumeItemListStart
+        \resumeItem{Thesis: "Experiments in Designing Personalized Motivational Systems"}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {\href{https://www.hse.ru/en/}{HSE University}}{Jan. 2017 -- June 2020}
+      {BA Sociology and Social Informatics}{St. Petersburg, Russia}
+      \resumeItemListStart
+         \resumeItem{Exchange semester at University of Bergen (Norway), 2019.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%----------- RESEARCH EXPERIENCE -----------
+\section{Research Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {\href{https://www.northwestern.edu/}{Northwestern University} (\href{https://sonic.northwestern.edu/}{SONIC} \& \href{https://atlas.northwestern.edu/}{ATLAS} Labs)}{June 2022 -- May 2025}
+      {Graduate Research Assistant}{Evanston, IL}
+      \resumeItemListStart
+        \resumeItem{Developed tools and practices to support reproducible experimental research.}
+        \resumeItem{Designed virtual lab experiments to study collaboration in Human-AI teams.}
+        \resumeItem{Led the transition from Wizard-of-Oz experiments to LLM-powered digital experiments on Empirica.ly.}
+        \resumeItem{Conducted a pilot study with 200+ participants.}
+        \resumeItem{Authored data-driven research on Human-AI Communication in teams using multilayer-ERGMs.}
+        \resumeItem{Supervised undergraduate interns and managed grant proposal writing.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {\href{https://slate.uib.no}{Centre for the Science of Learning \& Technology (SLATE)}}{Jan. 2020 -- June 2021}
       {Research Assistant}{Bergen, Norway}
       \resumeItemListStart
-        %\resumeItem{Supervisor: Dr. Mohammad Khalil}
-        \resumeItem{Created a virtual lab environment for reproducible experimentation on \textbf{course choice motivations and recommendation systems} for exchange students, using Shiny, Elasticsearch, and TensorFlow.}
-        \resumeItem{10+ Think aloud interviews, 50+ user test participants}
-    \resumeItemListEnd
+        \resumeItem{Created a virtual lab environment for reproducible experimentation on course choice motivations.}
+        \resumeItem{Tech stack: R Shiny, Elasticsearch, TensorFlow.}
+        \resumeItem{Conducted 10+ think-aloud interviews and 50+ user tests.}
+      \resumeItemListEnd
 
-
-    % \resumeSubheading
-    %   {European University At St. Petersburg}{Mar. -- Jun. 2022}
-    %   {Lecturer}{St.Petersburg, Russia}
-    %   \resumeItemListStart
-    %     \resumeItem{Data Visualization: MSc Applied Data Analysis (PANDAN); Grammar of Graphics, ggplot2, tableau; 20+ professional and graduate students}
-    %   \resumeItemListEnd
-
-    % \resumeSubheading
-    % {\MYhref{https://spb.hse.ru/en/fmcs/math/sociocomp/}{SocComp} research group at HSE University}{2017--2018; 2019--2020}
-    % {Junior member}{St.Petersburg, Russia}
-    %     \resumeItemListStart
-    %     \resumeItem{Supervisor: Prof. Alena Suvorova}
-    %     \resumeItem{Tutorials for junior students on Bayesian network analysis and xAI, and model interpretation for Data Science minor}
-    %     \resumeItem{Supervisor: Ilya Musabirov}
-    %     \resumeItem{Social Network Analysis of eSports transfers in Dota 2 with ERGMs}
-    %     \resumeItemListEnd
-
-    %     \resumeSubheading
-    % {HSE University}{2017 Sep. -- Jun. 2020}
-    % {Teaching Assistant}{St.Petersburg, Russia}
-    %     \resumeItemListStart
-    %     \resumeItem{Data Science minor: tutorial, grading}
-    %     \resumeItem{Theory Construction and Model Building: Undergraduate elective for Sociology Major students; Integration of theoretical frameworks, e.g. Desire-belief-opportunity, Theory of Planned behavior, Bounded rationality with Computational representation, e.g. production rules,  probabilistic models; NetLogo.}
-    %     \resumeItemListEnd
-
+    \resumeSubheading
+      {\href{https://vk.com/about}{Core Analytics} at VK}{July 2021 -- Sep. 2021}
+      {Research Intern}{St. Petersburg, Russia}
+      \resumeItemListStart
+        \resumeItem{(Largest social networking platform in Russia)}
+        \resumeItem{Population Scale Social Network Analysis: Validating Robin Dunbar’s concept of social circles
+on dyadic interactions, examining dynamics of social circles.}
+        \resumeItem{\href{https://www.youtube.com/watch?v=eoHZliaLYGY}{VK Teach Talk video (in Russian)}}
+      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
-
-%-----------EDUCATION-----------
-\section {Education}
+%----------- TEACHING EXPERIENCE -----------
+\section{Teaching Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Northwestern University}{June 2022 -- present}
-      {Graduate Student in Technology and Social Behavior}{Evanston, IL, USA}
-    \resumeItemListStart
-    % \resumeItem {Advisor: Noshir Contractor}
-    \resumeItem {Study the adoption of AI in teams and organizations from a socio-technical perspective and tools and practices to support reproducible experimental research}
-    \resumeItem{Relevant coursework: COMP SCI 496: Visualization for Scientific Communication (Matthew Kay); COMP SCI 496: The Design of Technological Tools for Thinking and Learning (Uri Wilensky); COMP SCI 415 Design, Technology, \& Research (Haoqi Zhang); MTS 519 Responsible Conduct Research; COMP SCI 497 Explanation and reproducibility in data-driven science (Jessica Hullman); MTS 525: Qualitative Methods for Understanding Technology Use and Design (Duri Long); MORS 526 Micro-Organizational Research Methods (Adam Waytz)}
-    % \resumeItem {Dissertation TBD}
-        \resumeItemListEnd
-
-
+      {\href{https://www.northwestern.edu/}{Northwestern University}}{Mar. 2023 -- Aug. 2024}
+      {Graduate Teaching Assistant}{Evanston, IL}
+      \resumeItemListStart
+        \resumeItem{\textbf{Outstanding Teaching Assistant Award} (Spring 2024, Social Network Analysis).}
+        \resumeItem{MSC 540: Leading Collaboration (Fall 2024) - Facilitated experiments.}
+        \resumeItem{COMP SCI 330: HCI (Fall 2023) - Lo-fi prototyping, Figma (200+ students).}
+        \resumeItem{Kellogg Executive Education: Leading Collaboration - Coached 50+ C-suite executives.}
+      \resumeItemListEnd
+      
     \resumeSubheading
-    {HSE University}{Sept. 2020 --  Jun. 2022}
-    {MSc Information Systems and Human-Computer Interaction}{St.Petersburg, Russia}
-        \resumeItemListStart
-        %\resumeItem{Advisor: Ilya Musabirov, Alena Suvorova}
-        \resumeItem{Thesis: "Experiments in Designing Personalized Motivational Systems" is a set of virtual labs designed to test the idea of self-nudging in crowdsource workers settings}
-        \resumeItemListEnd
-
-    %     \resumeSubheading
-    % {University of Bergen}{Aug. -- Dec. 2019}
-    % {Exchange term}{Bergen, Norway}
-    %     \resumeItemListStart
-    %     \resumeItem{Research Topics in Technology Enhanced Learning; Knowledge Representation and Reasoning}
-    %     \resumeItemListEnd  
-
-        \resumeSubheading
-    {HSE University, University of Bergen}{Jan. 2017 --  Jun. 2020}
-    {BA Sociology and Social Informatics}{St.Petersburg, Russia, Bergen, Norway}
-        \resumeItemListStart
-        %\resumeItem{Advisor: Ilya Musabirov}
-        \resumeItem{Thesis: "Computational Modelling Frameworks in Sociology: Scientometric Analysis" is a sociology of science work on how researchers transfer their epistemic beliefs from the original discipline into applied theoretical frameworks and computational representations}
-        \resumeItem{University of Bergen: Research Topics in Technology Enhanced Learning; Knowledge Representation and Reasoning}
-        \resumeItemListEnd  
-
-    %             \resumeSubheading
-    % {Immanuel Kant Baltic Federal University}{Sep. -- Dec. 2016}
-    % {Sociology}{Kaliningrad, Russia}
-    %     \resumeItemListStart
-    %     \resumeItem{State-funded place, but transferred after the first semester}
-    %     \resumeItemListEnd 
-        
+      {\href{https://www.hse.ru/en/}{HSE University}; \href{https://eusp.org/en}{European University at St. Petersburg}}{Sept. 2018 -- June 2022}
+      {Invited Lecturer \& Teaching Assistant}{St. Petersburg, Russia}
+      \resumeItemListStart
+        \resumeItem{Data Visualization (MSc): Taught Grammar of Graphics, ggplot2, Tableau.}
+        \resumeItem{Data Science Minor: Taught tidyverse, tidymodels, Shiny for non-STEM majors.}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-% \section{References}
-% \begin{itemize}
-%     \item  Matthew Kay, Assoc. Prof. Northwestern University, Department of Computer Science and Communication Studies, mjskay@northwestern.edu
-% %     \item Adam Waytz, Morris and Alice Kaplan Chair in Ethics and Decision Management, Kellogg School of
-% % Management, Northwestern University, a-waytz@kellogg.northwestern.edu
-%     % \item Barbara Wasson, Director, Centre for Science of Learning and Technology, Prof. Department of Information Science and Media Studies, University of Bergen, barbara.wasson@uib.no
-%     % \item Ilya Musabirov, incoming Educational Leadership Assist. Prof., Department of Computer Science, University of British Columbia (2018-2021: Senior Lecturer at HSE University), ilm@cs.ubc.ca
-% \end{itemize}
+%----------- SKILLS -----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Data Analysis}{: R (tidyverse, igraph, rvest, bnlearn), Python (pandas, pyspark, networkx)} \\
+     \textbf{Machine Learning}{: R (tidymodels, LDA), Python (Tensorflow, spaCy, HuggingFace, LLMs)} \\
+     \textbf{Visualization}{: R (ggplot2, Shiny), Tableau, Python (Seaborn, Plotly)} \\
+     \textbf{Development}{: JavaScript (Empirica.ly), SQL (ClickHouse, MongoDB), Elasticsearch, Docker, AWS, Git} \\
+     \textbf{Languages}{: Russian (Native), English (C2), Swedish (A1)}
+    }}
+ \end{itemize}
 
-  %---------------PUBLICATIONS----------------------------
-% add comments
-% add
+%----------- PUBLICATIONS -----------
+% Requires a .bib file. If you don't have it, comment this block out.
+\section{Publications}
 
 \defbibfilter{papers}{
   type=article or
   type=inproceedings or 
   type=inbook
 }
-\newrefcontext[labelprefix=P, sorting=ydnt]
 
-\nocite{Suschevskiy2025}
 \nocite{musabirov2024}
 \nocite{suschevskiy_creating_2021}
 \nocite{musabirov_teaching_2020}
 \nocite{marchenko_analysis_2018}
-\nocite{suschevskiy_network_2018}
 \nocite{cruz_cortes_comment_2024}
+\nocite{wong2026student}
 
-\printbibliography[
-    filter=papers,
-    title={Publications and Manuscripts}
-]
+\printbibliography[heading=none]
 
-% %---------------workshops----------------------------
-% \defbibfilter{workshops}{
-%   type=inproceedings 
-% }
-% \newrefcontext[labelprefix=W, sorting=ydnt]
-
-% \nocite{musabirov2024}
-% \printbibliography[filter=papers,title={Workshops}]
-
-%---------------presentations----------------------------
-\defbibfilter{presentations}{
-  type=misc 
-}
-\newrefcontext[labelprefix=C, sorting=ydnt]
-
-\nocite{CODE2023}
-\nocite{IC2S22023}
-\nocite{HCID2022}
-\nocite{Sunbelt2020}
-% \nocite{SIGCSE2020}
-\nocite{ICCSS2019}
-
-
-\printbibliography[filter=presentations,title={Conference presentations}]
-
-
-% %-----------PROJECTS-----------
-
-% \section{PROJECTS}
-%     \resumeSubHeadingListStart
-%       \resumeProjectHeading
-%           {\textbf{Hyku Consulting}} {Sept. 2019 -- Mar. 2021}
-%           \resumeItemListStart
-%             \resumeItem{Mentored 15 students towards acceptance at top US boarding schools; achieved \textbf{100\% success rate}}
-%             \resumeItem{Designed a \textbf{collaborative learning ecosystem} for students and parents with Trello, Miro, and Google Suite}
-%           \resumeItemListEnd
-          
-%         \resumeProjectHeading
-%           {\textbf{Minimal Icon Pack}}{Sept. 2020 -- Nov. 2020}
-%           \resumeItemListStart
-%             \resumeItem{Designed and released 100+ minimal iOS and Android icons from scratch using Procreate and Figma}
-%             \resumeItem{Marketed the product and design process on {\MYhref{https://www.youtube.com/watch?v=Ju32r7QJCzk}{YouTube}}; accumulated over \textbf{\$250 in sales} on {\MYhref{https://gumroad.com/l/icons-by-harshibar}{Gumroad}}}
-%           \resumeItemListEnd
-          
-%       \resumeProjectHeading
-%          {\textbf{CommonIntern}}{Sept. 2019 -- May 2020}
-%           \resumeItemListStart
-%             \resumeItem{Built a Python script to automatically apply to jobs on Glassdoor using BeautifulSoup and Selenium}
-%             \resumeItem{\textbf{500 stars on \MYhref{https://github.com/harshibar/common-intern}{GitHub}}; featured on {\MYhref{https://hackaday.com/2020/05/30/job-application-script-automates-the-boring-stuff-with-python}{Hackaday}}; made the front page of {\MYhref {https://www.reddit.com/r/Python/comments/gpaegj/i_was_tired_of_opening_100s_of_tabs_for/?utm_source=share}{r/python}} and {\MYhref {https://www.reddit.com/r/programming/comments/dcmbzx/i_was_tired_of_opening_100s_of_tabs_for/}{r/programming}}}
-%           \resumeItemListEnd
-          
-%     \resumeSubHeadingListEnd
-
-
-\section{Volunteer Experience}
-    \resumeSubHeadingListStart
-          \resumeProjectHeading
-        {OVD-Info} {Oct. 2024 - present} 
-          \resumeItemListStart
-            \resumeItem{
-            Volunteer in an independent human rights defense and media group.
-            }
-          \resumeItemListEnd
-      \resumeProjectHeading
-        {HELPDESK.MEDIA} {Sept. 2022} 
-          \resumeItemListStart
-            \resumeItem{Provided consultations on how to safely escape areas affected by war.}
-          \resumeItemListEnd
-        \resumeProjectHeading
-        {Women Data Leaders in Russia} {Sept. 2018 -- Jun. 2020}
-          \resumeItemListStart
-            \resumeItem{Organized poster session; Interviewed Jana Diesner and Milena Tsvetkova; Edited video for youtube channel}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
- %-----------Awards-----------
-\section{Awards}
- \begin{itemize}[leftmargin=0in, label={}]
-    \small{\item{
-     \textbf{Toloka Research Grant (Yandex LLC)} {: Supported my MSc thesis experimental research on behavioural nudges and boosts. Feb 2022.} \vspace{2pt} \\
-    }}
-    \small{\item{
-     \textbf{Peter and Adrienne Barris Outstanding Teaching Assistant} {: Northwestern Computer Science honors and recognizes students who demonstrate excellence in computer science mentoring and teaching. Spring 2024 Social Network Analysis class. (COMP-SCI 341)} \vspace{2pt} \\
-    }}
- \end{itemize}
-
-\section{Teaching Experience}\label{sec:teaching}
-
-    \resumeSubheading
-      {Northwestern University}{Mar. 2023 - Aug. 2024}
-      {Graduate Teaching Assistant}{Evanston, IL}
+%----------- VOLUNTEER -----------
+\section{Volunteer \& Service}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {SICSS-IAS $|$ \emph{Teaching Assistant}}{June 2025}
       \resumeItemListStart
-        \resumeItem{Fall 2023 COMP SCI 330: Human-Computer Interaction; 200+ undergraduate students; lo-fi paper prototyping; Figma; Prof.: Matthew Kay}
-      
-        \resumeItem{Spring 2023, Spring 2024; MSC 492: Leading \& Leveraging Networks; 50+ graduate students; Prof.: Noshir Contractor}
-
-        \resumeItem{Spring 2024, COMP SCI 341: Social Network Analysis; 75+ STEM and non-STEM students; Prof.: Noshir Contractor}
-
-        \resumeItem{Fall 2024, Kellogg Executive Education: Leading collaboration; 50+ adults students; Prof.: Leslie DeChurch}
-        
-      \resumeItemListEnd 
-\resumeSubHeadingListEnd
-
-    \resumeSubheading
-      {HSE University, European University At St. Petersburg}{Sept. 2018 -- Jun. 2022}
-      {Lecturer 2020-22, Teaching Assistant 2018, 19}{St.Petersburg, Russia}
-      \resumeItemListStart
-        \resumeItem{Data Science Minor: CS0 and CS1 for non-STEM majors; tidyverse, tidymodels, shiny; offline to online transition}
-        \resumeItem{MSc UX Analytics and Information System Design: Research Seminar; Into to experiments in HCI}
-        \resumeItem{MSc Data Analytics for Politics and Society: 15+ graduate students; sklearn, pandas, crowdsourcing}
-        \resumeItem{Data Visualization: MSc Applied Data Analysis (PANDAN); Grammar of Graphics, ggplot2, tableau; 20+ professional and graduate students}
-        \resumeItem{Theory Construction and Model Building: Undergraduate elective for Sociology Major students; Integration of theoretical frameworks, e.g. Desire-belief-opportunity, Theory of Planned behavior, Bounded rationality with Computational representation, e.g. production rules,  probabilistic models; NetLogo.}
+        \resumeItem{Prepared materials for the Summer Institute in Computational Social Science at the Institute for Analytical Sociology (Linköping). (\href{https://github.com/IAS-LiU/SICSS-2025}{GitHub Materials})}
       \resumeItemListEnd
-\resumeSubHeadingListEnd
-
-\section{Industry Experience}\label{sec:industry}
-    \resumeSubheading
-      {\MYhref{https://vk.com/about\#}{Core Analytics} at VK (Largest social networking platform in Russia)}{July - Sep. 2021}
-      {Research Internship}{St. Petersburg, Russia}
+    \resumeProjectHeading
+      {OVD-Info $|$ \emph{Volunteer}}{Oct. 2024 -- Present}
       \resumeItemListStart
-        \resumeItem{Population Scale Social Network Analysis: Validating Robin Dunbar's concept of social circles on dyadic interactions, examining dynamics of social circles. Privacy-focused design recommendations.}
-        \resumeItem{\MYhref{https://youtu.be/eoHZliaLYGY}{VK Teach Talk video (in Russian)}}
-      \resumeItemListEnd 
-\resumeSubHeadingListEnd
-
-
-
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Skills}
- \begin{itemize}[leftmargin=0in, label={}]
-    \small{\item{
-     \textbf{Data analysis:} {R (\textbf{tidyverse}, igraph, rvest, bnlearn, statnet); Python (pandas, pyspark, networkx)} 
-    \textbf{Machine Learning:} {R (\textbf{tidymodels}, rpart, LDA, STM); Python (Tensorflow, spacy, gensim, huggingface, LLMs)} \vspace{2pt} \\
-    \textbf{Visualization:} {R (ggplot2, visNetwork, plotly, shinydashboard), Tableau;  Python (Seaborn, Plotly) } 
-    \textbf{Interactive web apps:} {R (Shiny), JavaScript (empirica.ly), python (streamlit)} \vspace{2pt} \\
-    \textbf{Data Bases:} {SQL (ClickHouse, MongoDB), noSQL (Elasticsearch)} \vspace{2pt} \\
-    \textbf{All other random stuff:} {Linux, AWS, git, NetLogo, Prolog, Open Broadcast Software, Adobe Premiere Pro, \LaTeX}
-    }}
- \end{itemize}
-
-
-
- %-----------Languages-----------
-\section{Languages}
- \begin{itemize}[leftmargin=0in, label={}]
-    \small{\item{
-     \textbf{Russian:} {Native} \vspace{2pt} \\
-     \textbf{English:} {C1/C2; IELTS 7.5 2021} \vspace{2pt} \\
-     \textbf{French:} {beginner} \vspace{2pt} \\
-    \textbf{Norwegian:} {400 + days in Duolingo} \vspace{2pt} \\
-    }}
- \end{itemize}
-
-
-
-
-
-
+        \resumeItem{Data volunteering for independent human rights defense group.}
+        \resumeItemListEnd
+    \resumeProjectHeading
+      {IC2S2 2025 $|$ \emph{Session Chair}}{July 2025}
+      \resumeItemListStart
+        \resumeItem{Conference volunteering and chairing session on Social Networks}
+        \resumeItemListEnd
+    \resumeProjectHeading
+      {Women Data Leaders in Russia}{Sept. 2018 -- Jun. 2020}
+      \resumeItemListStart
+        \resumeItem{Organized poster session; Interviewed Jana Diesner and Milena Tsvetkova; Edited video for YouTube channel}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
 \end{document}
